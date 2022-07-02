@@ -1,0 +1,2 @@
+# DjangoCustomUser
+Extending Django AbstractBaseUser

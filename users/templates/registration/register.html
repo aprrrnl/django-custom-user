@@ -1,0 +1,14 @@
+{% extends "auth_base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+        <h4 >Sign up for an account</h4>
+        <form method="post" enctype="multipart/form-data">
+            {% csrf_token %}
+            {{form|crispy}}
+            <input type="hidden" name="next" value="{{ next }}">
+            <button type="submit">Register</button>
+
+        </form>
+{% endblock %}

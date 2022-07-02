@@ -1,0 +1,15 @@
+{% extends "auth_base.html" %}
+{% load crispy_forms_tags %}
+
+{% block content %}
+
+    <h4>Log in </h4>
+    <form method="post">
+      {% csrf_token %}
+      <input type="hidden" name="next" value="{{ next }}">{{ form|crispy }}<button type="submit"
+        >Log in</button>
+    </form>
+    Forgot your password? <a href="{% url "password_reset" %}">click here</a><br>
+    No account? <a href="{% url "register" %}?next={{ next }}">create new account</a>
+
+{% endblock %}
